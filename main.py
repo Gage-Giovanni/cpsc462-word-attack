@@ -1,5 +1,6 @@
 import pygame, sys
 from button import Button
+from game import main
 
 pygame.init()
 
@@ -13,21 +14,7 @@ def get_font(size): # Returns Press-Start-2P in the desired size
 
 def play():
     while True:
-        #set the basic backsreen and pointer
-        PLAY_MOUSE_POS = pygame.mouse.get_pos()
-        SCREEN.fill("black")
-
-        #Create the text for the play screen for now
-        PLAY_TEXT = get_font(45).render("This is the PLAY screen.", True, "White")
-        PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 260))
-        SCREEN.blit(PLAY_TEXT, PLAY_RECT)
-
-        #Create the return button to the main menu
-        PLAY_BACK = Button(image=None, pos=(640, 460), 
-                            text_input="BACK", font=get_font(75), base_color="White", hovering_color="Green")
-        PLAY_BACK.changeColor(PLAY_MOUSE_POS)
-        PLAY_BACK.update(SCREEN)
-
+        main()
         #Parameters for quitting game and buttons reaction
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -66,7 +53,6 @@ def LEADER_BOARD():
                     main_menu()
 
         pygame.display.update()
-
 def main_menu():
     while True:
 
@@ -75,7 +61,7 @@ def main_menu():
         MENU_MOUSE_POS = pygame.mouse.get_pos()
 
         #Create the text for the games title
-        MENU_TEXT = get_font(90).render("Name Pending", True, "Red")
+        MENU_TEXT = get_font(90).render("Word Attack", True, "Red")
         MENU_RECT = MENU_TEXT.get_rect(center=(640, 100))
 
         #Create the three buttons for the main menu PLAY, LEADERBOARD, and QUIT
