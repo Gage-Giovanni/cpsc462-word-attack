@@ -1,3 +1,4 @@
+import pygame, sys
 class Settings:
     def __init__(self):
         # Game Title
@@ -15,8 +16,8 @@ class Settings:
         self.score_color = (105, 179, 240)
 
         # Define Screen Size
-        self.x = 1366
-        self.y = 768
+        self.x = 1280
+        self.y = 720
 
         # Determine Speed / Point
         self.speed = 0.03
@@ -36,3 +37,4 @@ class Settings:
         self.use_txt = None
         self.point_caption = None
         self.lines = None
+        self.gameover = "Game Over"
