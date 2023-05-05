@@ -1,7 +1,6 @@
 import pygame, sys
 from button import Button
 from game import main
-from leaderboard import getSortedLeaders
 
 pygame.init()
 
@@ -33,22 +32,13 @@ def LEADER_BOARD():
         LEADER_BOARD_POS = pygame.mouse.get_pos()
         SCREEN.fill("Black")
 
-        #Create the text for the leadboard title
-        LEADER_BOARD_TEXT = get_font(75).render("Leaderboard", True, "White")
-        LEADER_BOARD_RECT = LEADER_BOARD_TEXT.get_rect(center=(640, 60))
+        #Create the text for the leadboard for now
+        LEADER_BOARD_TEXT = get_font(45).render("This is the LEADER BOARD screen.", True, "White")
+        LEADER_BOARD_RECT = LEADER_BOARD_TEXT.get_rect(center=(640, 260))
         SCREEN.blit(LEADER_BOARD_TEXT, LEADER_BOARD_RECT)
 
-        #Retrieve and display top ten scores
-        high_scores = getSortedLeaders()[:10]
-        position = [640, 155]
-        for score in high_scores:
-            SCORE_TEXT = get_font(30).render(score['name'] + " - " + str(score['score']), True, "White")
-            SCORE_RECT = SCORE_TEXT.get_rect(center = position)
-            SCREEN.blit(SCORE_TEXT, SCORE_RECT)
-            position[1] += 45
-
         #Create the return button to main menu
-        LEADER_BOARD_BACK = Button(image=None, pos=(640, 650), 
+        LEADER_BOARD_BACK = Button(image=None, pos=(640, 460), 
                             text_input="BACK", font=get_font(75), base_color="White", hovering_color="Green")
         LEADER_BOARD_BACK.changeColor(LEADER_BOARD_POS)
         LEADER_BOARD_BACK.update(SCREEN)
