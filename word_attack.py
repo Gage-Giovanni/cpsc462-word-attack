@@ -8,7 +8,7 @@ class WordAttack:
         # Word generator will generate a random word from a list of words
         self.game.settings.word_x = random.randint(100, 500)
         self.game.settings.word_y = 0
-        self.game.settings.speed += 0.03
+        self.game.settings.speed += 0.6
         self.game.settings.pressed_word = ""
 
     def draw(self):
