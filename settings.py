@@ -13,21 +13,21 @@ class Settings:
         # BG, Score, Word Colors
         self.bg = (0, 0, 0)
         self.word_color = (255, 255, 255)
-        self.score_color = (105, 179, 240)
+        self.score_color = (0, 0, 0)
 
         # Define Screen Size
         self.x = 1280
         self.y = 720
 
         # Determine Speed / Point
-        self.speed = 0.03
+        self.speed = 0.6
         self.point = 0
 
         # Font Settings
-        self.font_family = "calibri"
-        self.font_size = 48
-        self.score_font_family = "arialblack"
-        self.score_font_size = 32
+        self.font_family = "assets/font_2.ttf"
+        self.font_size = 72
+        self.score_font_family = "assets/font_2.ttf"
+        self.score_font_size = 48
 
         # Word Generator Settings
         self.chosen_word = None

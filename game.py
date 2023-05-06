@@ -28,8 +28,8 @@ class Game:
 
         # Calls the Settings(), which contains all the variables needed for the game
         self.settings = Settings()
-        self.font = pg.font.SysFont(self.settings.font_family, self.settings.font_size)
-        self.score_font = pg.font.SysFont(self.settings.score_font_family, self.settings.score_font_size)
+        self.font = pg.font.Font(self.settings.font_family, self.settings.font_size)
+        self.score_font = pg.font.Font(self.settings.score_font_family, self.settings.score_font_size)
 
         # Sets the screen and displays caption for the program
         self.screen = pg.display.set_mode((self.settings.x, self.settings.y))
@@ -86,10 +86,22 @@ class Game:
         # Draw creates the screen, adds the background, sets the speed, and also imports the words and
         # backgrounds
         self.screen.fill(self.settings.bg)
+
+        # Loads the Graphics for the Game
+        moon_img = pg.image.load("assets/star_moon_bg.png")
+        building_img = pg.image.load("assets/buildings.png")
+        score_rect_area = pg.image.load("assets/score_rect.png")
+        score_icon_area = pg.image.load("assets/score_icon.png")
+        self.screen.blit(moon_img, (0,0))
+        self.screen.blit(building_img, (0, 500))
+        self.screen.blit(score_rect_area, (20, 20))
+        self.screen.blit(score_icon_area, (50, 50))
+
         self.settings.word_y += self.settings.speed
         self.screen.blit(self.settings.use_txt, (self.settings.word_x, self.settings.word_y))
         self.settings.point_caption = self.score_font.render(str(self.settings.point), True, self.settings.score_color)
-        self.screen.blit(self.settings.point_caption, (10, 5))
+        # Displays Point Value
+        self.screen.blit(self.settings.point_caption, (115, 50))
     def event_watcher(self, e):
         if e.type == pg.QUIT:
             addScore(self.user, self.settings.point)
