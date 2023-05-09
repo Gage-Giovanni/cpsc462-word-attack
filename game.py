@@ -10,7 +10,6 @@ pg.init()
 
 #play background music and set sound effect variables
 music = pg.mixer.music.load("space_music.mp3")
-pg.mixer.music.play(-1)
 correct_sound = pg.mixer.Sound("correct_input_sound.mp3")
 gameover_sound = pg.mixer.Sound("gameover_sound.mp3")
 #Set the screen and font variables throught the game
@@ -88,10 +87,10 @@ class Game:
         self.screen.fill(self.settings.bg)
 
         # Loads the Graphics for the Game
-        moon_img = pg.image.load("assets/star_moon_bg.png")
-        building_img = pg.image.load("assets/buildings.png")
-        score_rect_area = pg.image.load("assets/score_rect.png")
-        score_icon_area = pg.image.load("assets/score_icon.png")
+        moon_img = pg.image.load("assets/star_moon_bg.jpg")
+        building_img = pg.image.load("assets/buildings.jpg")
+        score_rect_area = pg.image.load("assets/score_rect.jpg")
+        score_icon_area = pg.image.load("assets/score_icon.jpg")
         self.screen.blit(moon_img, (0,0))
         self.screen.blit(building_img, (0, 500))
         self.screen.blit(score_rect_area, (20, 20))
