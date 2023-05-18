@@ -88,10 +88,10 @@ class Game:
         self.screen.fill(self.settings.bg)
 
         # Loads the Graphics for the Game
-        moon_img = pg.image.load("assets/star_moon_bg.png")
-        building_img = pg.image.load("assets/buildings.png")
-        score_rect_area = pg.image.load("assets/score_rect.png")
-        score_icon_area = pg.image.load("assets/score_icon.png")
+        moon_img = pg.image.load("assets/star_moon_bg.jpg")
+        building_img = pg.image.load("assets/buildings.jpg")
+        score_rect_area = pg.image.load("assets/score_rect.jpg")
+        score_icon_area = pg.image.load("assets/score_icon.jpg")
         self.screen.blit(moon_img, (0,0))
         self.screen.blit(building_img, (0, 500))
         self.screen.blit(score_rect_area, (20, 20))
@@ -139,8 +139,7 @@ class Game:
                     self.reset()
 
 def main():
-    # System Fonts
-    #print(pg.font.get_fonts())
+    #Instantiate Game and begin playing
     x = Game()
     x.play()
 def play():
@@ -163,7 +162,7 @@ def LEADER_BOARD():
         SCREEN.fill("Black")
 
         #Create the text for the leadboard title
-        LEADER_BOARD_TEXT = get_font(75).render("Leaderboard", True, "White")
+        LEADER_BOARD_TEXT = get_font(75).render("Leaderboard", True, "Red")
         LEADER_BOARD_RECT = LEADER_BOARD_TEXT.get_rect(center=(640, 60))
         SCREEN.blit(LEADER_BOARD_TEXT, LEADER_BOARD_RECT)
 
