@@ -13,6 +13,7 @@ music = pg.mixer.music.load("assets/space_music.mp3")
 pg.mixer.music.play(-1)
 correct_sound = pg.mixer.Sound("assets/correct_input_sound.mp3")
 gameover_sound = pg.mixer.Sound("assets/gameover_sound.mp3")
+
 #Set the screen and font variables throught the game
 SCREEN = pg.display.set_mode((1280, 720))
 def get_font(size): 
