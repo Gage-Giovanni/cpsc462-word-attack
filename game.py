@@ -139,8 +139,7 @@ class Game:
                     self.reset()
 
 def main():
-    # System Fonts
-    #print(pg.font.get_fonts())
+    #Instantiate Game and begin playing
     x = Game()
     x.play()
 def play():
@@ -163,7 +162,7 @@ def LEADER_BOARD():
         SCREEN.fill("Black")
 
         #Create the text for the leadboard title
-        LEADER_BOARD_TEXT = get_font(75).render("Leaderboard", True, "White")
+        LEADER_BOARD_TEXT = get_font(75).render("Leaderboard", True, "Red")
         LEADER_BOARD_RECT = LEADER_BOARD_TEXT.get_rect(center=(640, 60))
         SCREEN.blit(LEADER_BOARD_TEXT, LEADER_BOARD_RECT)
 
