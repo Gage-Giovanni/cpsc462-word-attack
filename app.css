@@ -1,13 +1,13 @@
 @font-face {
     font-family: spaceFont;
-    src: url(/assets/Space.ttf);
+    src: url(assets/Space.ttf);
 }
 
 html {
     min-height: 100%;
     background-size: contain;
     background-color: #000000;
-    background-image: url(/assets/buildings.jpg), url(/assets/star_moon_bg.jpg);
+    background-image: url(assets/buildings.jpg), url(assets/star_moon_bg.jpg);
     background-repeat: no-repeat;
     background-position: bottom;
 }
